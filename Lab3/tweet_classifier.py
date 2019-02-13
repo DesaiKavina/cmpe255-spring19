@@ -7,18 +7,18 @@
 import sklearn
 
 
-# In[16]:
+# In[35]:
 
 
 def load_data():
     data = []
     data_labels = []
-    with open("C:\\Users\\DELL\\Desktop\\pos_tweets.txt", encoding="utf8") as f:
+    with open("./pos_tweets.txt", encoding="utf8") as f:
         for i in f: 
             data.append(i) 
             data_labels.append('pos')
 
-    with open("C:\\Users\\DELL\\Desktop\\neg_tweets.txt", encoding="utf8") as f:
+    with open("./neg_tweets.txt", encoding="utf8") as f:
         for i in f: 
             data.append(i)
             data_labels.append('neg')
@@ -68,6 +68,11 @@ def train_then_build_model(data_labels, features_nd):
 
 def process():
     data, data_labels = load_data()
+    print("\nThe first ten tweets were : ")
+    for i in range(618,628):
+        print(data[i])
+        print("\n")
+    
     features_nd = transform_to_features(data)
     train_then_build_model(data_labels, features_nd)
 
