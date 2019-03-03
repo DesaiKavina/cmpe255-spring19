@@ -53,7 +53,8 @@ def predict_preferred_language_by_city(k_values, cities):
             val = knn_classify(i, copy_list, (cities[j][0][0],cities[j][0][1]))
             if val == cities[j][1]:
                 counter = counter + 1
-        print("\n",i, "neighbor[s]:", counter, "correct out of", len(cities))   
+        print("\n",i, "neighbor[s]:", counter, "correct out of", len(cities)) 
+    print  
 
 if __name__ == "__main__":
     k_values = [1, 3, 5, 7]
